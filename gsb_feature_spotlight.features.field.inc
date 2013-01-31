@@ -46,11 +46,11 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 0,
+          'weight' => '0',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -113,7 +113,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
             'format_type' => 'long',
@@ -123,7 +123,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'multiple_to' => '',
           ),
           'type' => 'date_default',
-          'weight' => 8,
+          'weight' => '8',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -188,11 +188,11 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 5,
+          'weight' => '5',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -256,11 +256,11 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 6,
+          'weight' => '6',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -317,11 +317,13 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 3,
+          'label' => 'hidden',
+          'module' => 'file_entity',
+          'settings' => array(
+            'file_view_mode' => 'preview',
+          ),
+          'type' => 'file_rendered',
+          'weight' => '3',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -409,11 +411,11 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(),
           'type' => 'list_default',
-          'weight' => 4,
+          'weight' => '4',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -469,11 +471,11 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 1,
+          'weight' => '1',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -541,11 +543,11 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(),
-          'type' => 'taxonomy_term_reference_link',
-          'weight' => 7,
+          'type' => 'taxonomy_term_reference_plain',
+          'weight' => '7',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
@@ -604,11 +606,11 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => 2,
+          'weight' => '2',
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
