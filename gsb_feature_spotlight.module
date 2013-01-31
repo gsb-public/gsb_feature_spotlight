@@ -1,0 +1,41 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_entity_alter().
+ */
+function gsb_feature_spotlight_entity_info_alter(&$entity_info) {
+  $entity_info['fieldable_panels_pane']['bundles']['gsb_spotlight'] = array(
+    'label' => t('Add GSB spotlight'),
+    'pane category' => t('GSB Category'),
+    'pane top level' => TRUE, // set to true to make this show as a top level icon
+    'pane icon' => drupal_get_path('module', 'panopoly_widgets') . '/images/icon_spotlight.png',
+    'admin' => array(
+      'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
+      'bundle argument' => 4,
+      // Note that this has all _ replaced with - from the bundle name.
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/gsb-spotlight',
+      'access arguments' => array('administer fieldable panels panes'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
+  // Only manipulate the feildable panel pane form and the gsb_spotlight one at that.
+  if ($form_id == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form' && $form['#bundle'] == 'gsb_spotlight') {
+    // Hide the title field.
+    $form['title']['#access'] = $form['link']['#access'] = FALSE;
+
+    // Position relies on the type being a Student.
+    $form['field_title_position']['#states']['invisible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Student';
+
+    // Program relies on the type being a Faculty member.
+    $form['field_program']['#states']['invisible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Faculty';
+  }
+}
