@@ -29,7 +29,6 @@ function gsb_feature_spotlight_entity_info_alter(&$entity_info) {
 function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
   // Only manipulate the feildable panel pane form and the gsb_spotlight one at that.
   if ($form_id == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form' && $form['#bundle'] == 'gsb_spotlight') {
-    dsm($form);
     // Hide the title field.
     $form['title']['#access'] = $form['link']['#access'] = FALSE;
 
