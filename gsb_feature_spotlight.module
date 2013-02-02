@@ -29,6 +29,7 @@ function gsb_feature_spotlight_entity_info_alter(&$entity_info) {
 function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
   // Only manipulate the feildable panel pane form and the gsb_spotlight one at that.
   if ($form_id == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form' && $form['#bundle'] == 'gsb_spotlight') {
+    dsm($form);
     // Hide the title field.
     $form['title']['#access'] = $form['link']['#access'] = FALSE;
 
@@ -37,5 +38,6 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
 
     // Program relies on the type being a Faculty member.
     $form['field_program']['#states']['invisible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Faculty';
+    $form['field_graduation_year']['#states']['invisible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Faculty';
   }
 }

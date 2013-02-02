@@ -154,14 +154,14 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_gsb_spotlght_desc_quote'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_gsb_spotlght_desc_quote'] = array(
+  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_gsb_spotlight_body'.
+  $fields['fieldable_panels_pane-gsb_spotlight-field_gsb_spotlight_body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
       'deleted' => '0',
       'entity_types' => array(),
-      'field_name' => 'field_gsb_spotlght_desc_quote',
+      'field_name' => 'field_gsb_spotlight_body',
       'foreign keys' => array(
         'format' => array(
           'columns' => array(
@@ -188,16 +188,16 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'text',
           'settings' => array(),
           'type' => 'text_default',
-          'weight' => '5',
+          'weight' => 9,
         ),
       ),
       'entity_type' => 'fieldable_panels_pane',
-      'field_name' => 'field_gsb_spotlght_desc_quote',
-      'label' => 'Description/Quote',
+      'field_name' => 'field_gsb_spotlight_body',
+      'label' => 'Body',
       'required' => 0,
       'settings' => array(
         'linkit' => array(
@@ -214,67 +214,6 @@ function gsb_feature_spotlight_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '9',
-      ),
-    ),
-  );
-
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_gsb_spotlight_body_type'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_gsb_spotlight_body_type'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_gsb_spotlight_body_type',
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          'Description' => 'Description',
-          'Quote' => 'Quote',
-        ),
-        'allowed_values_function' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'list_text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
-      'default_value' => array(
-        0 => array(
-          'value' => 'Description',
-        ),
-      ),
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'list',
-          'settings' => array(),
-          'type' => 'list_default',
-          'weight' => '6',
-        ),
-      ),
-      'entity_type' => 'fieldable_panels_pane',
-      'field_name' => 'field_gsb_spotlight_body_type',
-      'label' => 'Body Type',
-      'required' => 1,
-      'settings' => array(
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(),
-        'type' => 'options_buttons',
         'weight' => '8',
       ),
     ),
@@ -391,9 +330,10 @@ function gsb_feature_spotlight_field_default_fields() {
       'module' => 'list',
       'settings' => array(
         'allowed_values' => array(
+          'Alumni' => 'Alumni',
           'Faculty' => 'Faculty',
+          'Past Participant' => 'Past Participant',
           'Student' => 'Student',
-          'Alumnus' => 'Alumnus',
         ),
         'allowed_values_function' => '',
       ),
@@ -639,8 +579,7 @@ function gsb_feature_spotlight_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Body Type');
-  t('Description/Quote');
+  t('Body');
   t('First Name');
   t('Graduation Year');
   t('Image or Video');
