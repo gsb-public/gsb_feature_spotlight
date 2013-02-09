@@ -4,6 +4,28 @@
  * Drupal needs this blank file.
  */
 
+ /**
+  * Implements hook_menu().
+  */
+function gsb_feature_spotlight_menu() {
+  $items['gsb_feature_spotlight_autocomplete/%/%'] = array(
+    'title' => 'GSB Feature Spotlight Autocomplete',
+    'page callback' => 'gsb_feature_spotlight_autocomplete',
+    'page arguments' => array(1, 2),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['gsb_feature_spotlight_faculty_thumbnail/%'] = array(
+    'title' => 'GSB Feature Spotlight Faculty Thumbnail',
+    'page callback' => 'gsb_feature_spotlight_faculty_thumbnail',
+    'page arguments' => array(1),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+ }
 /**
  * Implements hook_entity_alter().
  */
@@ -27,10 +49,52 @@ function gsb_feature_spotlight_entity_info_alter(&$entity_info) {
  * Implements hook_form_alter().
  */
 function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
+
   // Only manipulate the feildable panel pane form and the gsb_spotlight one at that.
-  if ($form_id == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form' && $form['#bundle'] == 'gsb_spotlight') {
+  if (($form_id == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form' || $form_id == 'fieldable_panels_panes_entity_edit_form') && $form['#bundle'] == 'gsb_spotlight') {
+
+    $form['#attached']['js'][] = drupal_get_path('module', 'gsb_feature_spotlight') . '/js/autofill.js';
     // Hide the title field.
     $form['title']['#access'] = $form['link']['#access'] = FALSE;
+
+    // Make first name and last name autofill fields.
+    $default_person_type = $form['field_gsb_spotlight_person_type']['und']['#default_value'];
+    $form['field_first_name']['und'][0]['value']['#autocomplete_path'] = 'gsb_feature_spotlight_autocomplete/' . $default_person_type . '/first';
+    $form['field_last_name']['und'][0]['value']['#autocomplete_path'] = 'gsb_feature_spotlight_autocomplete/' . $default_person_type . '/last';
+
+    // Create faculty image wrapper.
+    $form['field_gsb_spotlight_faculty_image'] = array(
+      '#type' => 'container',
+      '#weight' => $form['field_gsb_spotlight_image_video']['#weight'],
+      '#states' => array(
+        'visible' => array(
+          ':input[name="field_gsb_spotlight_person_type[und]"]' => array(
+            'value' => 'Faculty',
+          ),
+          ':input[name="field_gsb_spotlight_use_prof_img[und]"]' => array(
+            'checked' => TRUE,
+          ),
+        ),
+      ),
+    );
+
+    // Create faculty image field.
+    $form['field_gsb_spotlight_faculty_image']['image_wrapper'] = array(
+      '#markup' => '<div id="gsb-faculty-image-wrapper"></div>',
+    );
+
+    // Only show use faculty image checkbox when faculty is selected.
+    $form['field_gsb_spotlight_use_prof_img']['#states']['visible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Faculty';
+
+    // Hide the upload field if they want to use the faculty field.
+    $form['field_gsb_spotlight_image_video']['#states']['invisible'] = array(
+      ':input[name="field_gsb_spotlight_person_type[und]"]' => array(
+        'value' => 'Faculty',
+      ),
+      ':input[name="field_gsb_spotlight_use_prof_img[und]"]' => array(
+        'checked' => TRUE,
+      ),
+    );
 
     // Position relies on the type being a Student.
     $form['field_title_position']['#states']['invisible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Student';
@@ -39,4 +103,87 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
     $form['field_program']['#states']['invisible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Faculty';
     $form['field_graduation_year']['#states']['invisible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Faculty';
   }
+
+  if ($form_id == 'field_ui_field_edit_form') {
+    if ($form['#field']['module'] == 'gsb_feature_spotlight'){
+      $form['field']['cardinality']['#access'] = FALSE;
+    }
+  }
+}
+
+/**
+ * Autocomplete form for spotlight.
+ */
+function gsb_feature_spotlight_autocomplete($person_type, $field_type, $search_term = '') {
+  // @todo check if person_type is in allowed types.
+  $matches = array();
+  $field = '';
+  if ($field_type == 'first') {
+    $field = 'field_first_name';
+  }
+  elseif ($field_type == 'last') {
+    $field = 'field_last_name';
+  }
+
+  if (!empty($field)) {
+    $query = new EntityFieldQuery();
+
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'gsb_person')
+      ->propertyCondition('status', 1)
+      ->fieldCondition($field, 'value', $search_term . '%', 'like')
+      ->range(0, 5);
+
+    $result = $query->execute();
+    $items = array();
+    if (isset($result['node'])) {
+      $nids = array_keys($result['node']);
+      $items = entity_load('node', $nids);
+    }
+
+    foreach($items as $nid => $entity) {
+      $data = array(
+        'nid' => $nid,
+        'first_name' => (empty($entity->field_first_name['und'][0]['safe_value'])) ? '' : $entity->field_first_name['und'][0]['safe_value'],
+        'last_name' => (empty($entity->field_last_name['und'][0]['safe_value'])) ? '' : $entity->field_last_name['und'][0]['safe_value'],
+        'title' => (empty($entity->field_title['und'][0]['safe_value'])) ? '' : $entity->field_title['und'][0]['safe_value'],
+        'url' => (empty($entity->path['alias'])) ? $entity->path['source'] : $entity->path['alias'],
+        'fid' => (empty($entity->field_headshot['und'][0]['fid'])) ? '' : $entity->field_headshot['und'][0]['fid'],
+      );
+
+      $data['url'] = trim(base_path() . $data['url'], '/');
+
+      $key = '';
+      if ($field == 'field_first_name') {
+        $key = $data['first_name'];
+      }
+      elseif ($field == 'field_last_name') {
+        $key = $data['last_name'];
+      }
+
+      if (!empty($key)) {
+        $matches[$key] = '<div class="item-wrapper" data-info="' . implode('|', $data) . '"><div class="person-autofill-name">' . $data['first_name'] . ' ' . $data['last_name'] . '</div><div class="person-autofill-title">' . $data['title'] . '</div></div>';
+      }
+    }
+  }
+
+  drupal_json_output($matches);
+}
+
+function gsb_feature_spotlight_faculty_thumbnail($fid) {
+
+  $output = '';
+  if (!empty($fid)) {
+    $file = file_load($fid);
+    $attributes = array(
+      'style_name' => 'gsb_image_small',
+      'path' => $file->uri,
+      'alt' => $file->alt,
+      'title' => $file->title,
+    );
+    $output = theme_image_style($attributes);
+  }
+
+  print $output;
+  exit();
 }
