@@ -12,6 +12,26 @@
         $('#gsb-faculty-image-wrapper').load(Drupal.settings.basePath + 'gsb_feature_spotlight_faculty_thumbnail/' + oldFid);
       }
 
+      // If they choose a type only show autocomplete if it's a faculty spotlight.
+      $('input[name="field_gsb_spotlight_person_type[und]"]').click(function() {
+        Drupal.gsbFeatureSpotlight.toggleAutocomplete();
+      });
+    }
+  }
+
+  Drupal.gsbFeatureSpotlight = Drupal.gsbFeatureSpotlight || {}
+  Drupal.gsbFeatureSpotlight.toggleAutocomplete = function() {
+    // Get the chosen type
+    personType = $('input[name="field_gsb_spotlight_person_type[und]"]:checked').val();
+
+    // Add class to the body element to hide the autocomplete.
+    // @TODO Add the allowed types via javascript settings so we can have any number of types.
+    if (personType == 'Faculty') {
+      $(':input[name="field_first_name[und][0][value]"]').siblings('input').val(Drupal.settings.basePath + 'gsb_feature_spotlight_autocomplete/' + personType + '/first');
+      $(':input[name="field_last_name[und][0][value]"]').siblings('input').val(Drupal.settings.basePath + 'gsb_feature_spotlight_autocomplete/' + personType + '/last');
+      $(':input[name="field_first_name[und][0][value]"], :input[name="field_last_name[und][0][value]"]').addClass('form-autocomplete');
+      Drupal.behaviors.autocomplete.attach(document);
+
       // If an item is autocompleted fill the fields.
       $(':input[name="field_first_name[und][0][value]"], :input[name="field_last_name[und][0][value]"]').blur(function(e) {
         data = $('#autocomplete .selected .item-wrapper').data('info');
@@ -33,26 +53,6 @@
           $(':input[name="field_gsb_spotlight_link[und][0][url]"]').val(link);
         }
       });
-
-      // If they choose a type only show autocomplete if it's a faculty spotlight.
-      $('input[name="field_gsb_spotlight_person_type[und]"]').click(function() {
-        Drupal.gsbFeatureSpotlight.toggleAutocomplete();
-      });
-    }
-  }
-
-  Drupal.gsbFeatureSpotlight = Drupal.gsbFeatureSpotlight || {}
-  Drupal.gsbFeatureSpotlight.toggleAutocomplete = function() {
-    // Get the chosen type
-    personType = $('input[name="field_gsb_spotlight_person_type[und]"]:checked').val();
-
-    // Add class to the body element to hide the autocomplete.
-    // @TODO Add the allowed types via javascript settings so we can have any number of types.
-    if (personType == 'Faculty') {
-      $(':input[name="field_first_name[und][0][value]"]').siblings('input').val(Drupal.settings.basePath + 'gsb_feature_spotlight_autocomplete/' + personType + '/first');
-      $(':input[name="field_last_name[und][0][value]"]').siblings('input').val(Drupal.settings.basePath + 'gsb_feature_spotlight_autocomplete/' + personType + '/last');
-      $(':input[name="field_first_name[und][0][value]"], :input[name="field_last_name[und][0][value]"]').addClass('form-autocomplete');
-      Drupal.behaviors.autocomplete.attach(document);
     }
     else {
       $(':input[name="field_first_name[und][0][value]"], :input[name="field_last_name[und][0][value]"]').unbind();
