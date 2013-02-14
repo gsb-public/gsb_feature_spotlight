@@ -9,10 +9,10 @@
 
       oldFid = $(':input[name="field_gsb_spotlight_profile_fid[und][0][value]"]').val();
       if (Math.floor(oldFid) == oldFid && $.isNumeric(oldFid)) {
-        $('#gsb-faculty-image-wrapper').load(Drupal.settings.basePath + 'gsb_feature_spotlight_faculty_thumbnail/' + oldFid);
+        $('#gsb-person-image-wrapper').load(Drupal.settings.basePath + 'gsb_feature_spotlight_create_thumbnail/' + oldFid);
       }
 
-      // If they choose a type only show autocomplete if it's a faculty spotlight.
+      // If they choose a type adjust the autocomplete.
       $('input[name="field_gsb_spotlight_person_type[und]"]').click(function() {
         Drupal.gsbFeatureSpotlight.toggleAutocomplete();
       });
@@ -26,7 +26,7 @@
 
     // Add class to the body element to hide the autocomplete.
     // @TODO Add the allowed types via javascript settings so we can have any number of types.
-    if (personType == 'Faculty') {
+    if (personType == 'Faculty' || personType == 'Staff') {
       $(':input[name="field_first_name[und][0][value]"]').siblings('input').val(Drupal.settings.basePath + 'gsb_feature_spotlight_autocomplete/' + personType + '/first');
       $(':input[name="field_last_name[und][0][value]"]').siblings('input').val(Drupal.settings.basePath + 'gsb_feature_spotlight_autocomplete/' + personType + '/last');
       $(':input[name="field_first_name[und][0][value]"], :input[name="field_last_name[und][0][value]"]').addClass('form-autocomplete');
@@ -49,7 +49,7 @@
           $(':input[name="field_title_position[und][0][value]"]').val(title);
           $(':input[name="field_gsb_spotlight_profile_fid[und][0][value]"]').val(fid);
 
-          $('#gsb-faculty-image-wrapper').load(Drupal.settings.basePath + 'gsb_feature_spotlight_faculty_thumbnail/' + fid);
+          $('#gsb-person-image-wrapper').load(Drupal.settings.basePath + 'gsb_feature_spotlight_create_thumbnail/' + fid);
           $(':input[name="field_gsb_spotlight_link[und][0][url]"]').val(link);
         }
       });

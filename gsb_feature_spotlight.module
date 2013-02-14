@@ -16,9 +16,9 @@ function gsb_feature_spotlight_menu() {
     'type' => MENU_CALLBACK,
   );
 
-  $items['gsb_feature_spotlight_faculty_thumbnail/%'] = array(
-    'title' => 'GSB Feature Spotlight Faculty Thumbnail',
-    'page callback' => 'gsb_feature_spotlight_faculty_thumbnail',
+  $items['gsb_feature_spotlight_create_thumbnail/%'] = array(
+    'title' => 'GSB Feature Spotlight Create Thumbnail',
+    'page callback' => 'gsb_feature_spotlight_create_thumbnail',
     'page arguments' => array(1),
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
@@ -62,14 +62,15 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
     $form['field_first_name']['und'][0]['value']['#autocomplete_path'] = 'gsb_feature_spotlight_autocomplete/' . $default_person_type . '/first';
     $form['field_last_name']['und'][0]['value']['#autocomplete_path'] = 'gsb_feature_spotlight_autocomplete/' . $default_person_type . '/last';
 
-    // Create faculty image wrapper.
-    $form['field_gsb_spotlight_faculty_image'] = array(
+    // Create person image wrapper.
+    $form['field_gsb_spotlight_person_image'] = array(
       '#type' => 'container',
       '#weight' => $form['field_gsb_spotlight_image_video']['#weight'],
       '#states' => array(
         'visible' => array(
           ':input[name="field_gsb_spotlight_person_type[und]"]' => array(
-            'value' => 'Faculty',
+            array('value' => 'Faculty'),
+            array('value' => 'Staff'),
           ),
           ':input[name="field_gsb_spotlight_use_prof_img[und]"]' => array(
             'checked' => TRUE,
@@ -78,18 +79,22 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
       ),
     );
 
-    // Create faculty image field.
-    $form['field_gsb_spotlight_faculty_image']['image_wrapper'] = array(
-      '#markup' => '<div id="gsb-faculty-image-wrapper"></div>',
+    // Create person image field.
+    $form['field_gsb_spotlight_person_image']['image_wrapper'] = array(
+      '#markup' => '<div id="gsb-person-image-wrapper"></div>',
     );
 
-    // Only show use faculty image checkbox when faculty is selected.
-    $form['field_gsb_spotlight_use_prof_img']['#states']['visible'][':input[name="field_gsb_spotlight_person_type[und]"]']['value'] = 'Faculty';
+    // Only show use person image checkbox when person is selected.
+    $form['field_gsb_spotlight_use_prof_img']['#states']['visible'][':input[name="field_gsb_spotlight_person_type[und]"]'] = array(
+      array('value' => 'Faculty'),
+      array('value' => 'Staff'),
+    );
 
-    // Hide the upload field if they want to use the faculty field.
+    // Hide the upload field if they want to use the person field.
     $form['field_gsb_spotlight_image_video']['#states']['invisible'] = array(
       ':input[name="field_gsb_spotlight_person_type[und]"]' => array(
-        'value' => 'Faculty',
+        array('value' => 'Faculty'),
+        array('value' => 'Staff'),
       ),
       ':input[name="field_gsb_spotlight_use_prof_img[und]"]' => array(
         'checked' => TRUE,
@@ -116,6 +121,9 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
  */
 function gsb_feature_spotlight_autocomplete($person_type, $field_type, $search_term = '') {
   // @todo check if person_type is in allowed types.
+  if (!in_array($person_type, array('Faculty', 'Staff'))) {
+    $person_type = NULL;
+  }
   $matches = array();
   $field = '';
   if ($field_type == 'first') {
@@ -131,8 +139,13 @@ function gsb_feature_spotlight_autocomplete($person_type, $field_type, $search_t
     $query->entityCondition('entity_type', 'node')
       ->entityCondition('bundle', 'gsb_person')
       ->propertyCondition('status', 1)
-      ->fieldCondition($field, 'value', $search_term . '%', 'like')
-      ->range(0, 5);
+      ->fieldCondition($field, 'value', $search_term . '%', 'like');
+
+    if (!empty($person_type)) {
+      $query->fieldCondition('person', $person_type, '=');
+    }
+
+    $query->range(0, 5);
 
     $result = $query->execute();
     $items = array();
@@ -170,7 +183,7 @@ function gsb_feature_spotlight_autocomplete($person_type, $field_type, $search_t
   drupal_json_output($matches);
 }
 
-function gsb_feature_spotlight_faculty_thumbnail($fid) {
+function gsb_feature_spotlight_create_thumbnail($fid) {
 
   $output = '';
   if (!empty($fid)) {
