@@ -189,7 +189,7 @@ function gsb_feature_spotlight_create_thumbnail($fid) {
   if (!empty($fid)) {
     $file = file_load($fid);
     $attributes = array(
-      'style_name' => 'gsb_image_small',
+      'style_name' => '270x158',
       'path' => $file->uri,
       'alt' => $file->alt,
       'title' => $file->title,
