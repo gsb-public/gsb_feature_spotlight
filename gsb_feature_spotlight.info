@@ -24,7 +24,6 @@ features[features_api][] = api:1
 features[field][] = fieldable_panels_pane-gsb_spotlight-field_body
 features[field][] = fieldable_panels_pane-gsb_spotlight-field_file_single_public
 features[field][] = fieldable_panels_pane-gsb_spotlight-field_first_name
-features[field][] = fieldable_panels_pane-gsb_spotlight-field_gsb_spotlight_body
 features[field][] = fieldable_panels_pane-gsb_spotlight-field_last_name
 features[field][] = fieldable_panels_pane-gsb_spotlight-field_link_single
 features[field][] = fieldable_panels_pane-gsb_spotlight-field_program_single
