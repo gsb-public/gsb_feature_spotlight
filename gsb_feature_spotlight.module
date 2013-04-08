@@ -1,8 +1,10 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the GSB Feature Spotlight feature.
  */
+
+include_once 'gsb_feature_spotlight.features.inc';
 
  /**
   * Implements hook_menu().

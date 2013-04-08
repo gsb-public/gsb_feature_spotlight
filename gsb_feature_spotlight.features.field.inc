@@ -880,7 +880,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'module' => 'date',
           'settings' => array(
             'conditions' => array(),
-            'format_type' => 'long',
+            'format_type' => 'year',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
