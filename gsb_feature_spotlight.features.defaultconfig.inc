@@ -24,7 +24,7 @@ function gsb_feature_spotlight_defaultconfig_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__gsb_spotlight';
+  $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__spotlight';
   $strongarm->value = array(
     'view_modes' => array(
       'full' => array(
@@ -50,7 +50,7 @@ function gsb_feature_spotlight_defaultconfig_strongarm() {
       ),
     ),
   );
-  $export['field_bundle_settings_fieldable_panels_pane__gsb_spotlight'] = $strongarm;
+  $export['field_bundle_settings_fieldable_panels_pane__spotlight'] = $strongarm;
 
   return $export;
 }

@@ -10,8 +10,8 @@
 function gsb_feature_spotlight_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_body'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_body'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_body'.
+  $fields['fieldable_panels_pane-spotlight-field_body'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -38,7 +38,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'text_long',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -86,8 +86,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_file_single_public'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_file_single_public'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_file_single_public'.
+  $fields['fieldable_panels_pane-spotlight-field_file_single_public'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -118,7 +118,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'file',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -185,8 +185,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_first_name'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_first_name'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_first_name'.
+  $fields['fieldable_panels_pane-spotlight-field_first_name'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -215,7 +215,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'text',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -261,8 +261,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_last_name'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_last_name'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_last_name'.
+  $fields['fieldable_panels_pane-spotlight-field_last_name'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -291,7 +291,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'text',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -337,8 +337,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_link_single'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_link_single'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_link_single'.
+  $fields['fieldable_panels_pane-spotlight-field_link_single'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -368,7 +368,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'link_field',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -427,8 +427,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_program_single'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_program_single'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_program_single'.
+  $fields['fieldable_panels_pane-spotlight-field_program_single'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -451,7 +451,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'list_text',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -490,8 +490,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_spotlight_person_fid'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_spotlight_person_fid'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_spotlight_person_fid'.
+  $fields['fieldable_panels_pane-spotlight-field_spotlight_person_fid'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -507,7 +507,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'number_integer',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -555,8 +555,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_spotlight_person_nid'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_spotlight_person_nid'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_spotlight_person_nid'.
+  $fields['fieldable_panels_pane-spotlight-field_spotlight_person_nid'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -572,7 +572,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'number_integer',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -620,8 +620,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_spotlight_person_type'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_spotlight_person_type'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_spotlight_person_type'.
+  $fields['fieldable_panels_pane-spotlight-field_spotlight_person_type'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -649,7 +649,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'list_text',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => array(
         0 => array(
           'value' => 'Faculty',
@@ -692,8 +692,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_title_position_single'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_title_position_single'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_title_position_single'.
+  $fields['fieldable_panels_pane-spotlight-field_title_position_single'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -722,7 +722,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'text',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -768,8 +768,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_use_profile_img'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_use_profile_img'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_use_profile_img'.
+  $fields['fieldable_panels_pane-spotlight-field_use_profile_img'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -795,7 +795,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'list_boolean',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -835,8 +835,8 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_spotlight-field_year'.
-  $fields['fieldable_panels_pane-gsb_spotlight-field_year'] = array(
+  // Exported field: 'fieldable_panels_pane-spotlight-field_year'.
+  $fields['fieldable_panels_pane-spotlight-field_year'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -867,7 +867,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'type' => 'datetime',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_spotlight',
+      'bundle' => 'spotlight',
       'deleted' => '0',
       'description' => '',
       'display' => array(
