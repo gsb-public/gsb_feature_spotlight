@@ -44,11 +44,13 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
+          'settings' => array(
+            'conditions' => array(),
+          ),
           'type' => 'text_default',
-          'weight' => 26,
+          'weight' => '8',
         ),
         'ical' => array(
           'label' => 'above',
@@ -123,11 +125,14 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'file',
-          'settings' => array(),
-          'type' => 'file_default',
-          'weight' => 25,
+          'label' => 'hidden',
+          'module' => 'gsb_field_formatter',
+          'settings' => array(
+            'conditions' => array(),
+            'file_view_mode' => 'full',
+          ),
+          'type' => 'gsb_field_formatter_default_format',
+          'weight' => '1',
         ),
         'ical' => array(
           'label' => 'above',
@@ -223,9 +228,11 @@ function gsb_feature_spotlight_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '0',
+          'settings' => array(
+            'conditions' => array(),
+          ),
+          'type' => 'text_plain',
+          'weight' => '3',
         ),
         'ical' => array(
           'label' => 'above',
@@ -299,9 +306,11 @@ function gsb_feature_spotlight_field_default_fields() {
         'default' => array(
           'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => '1',
+          'settings' => array(
+            'conditions' => array(),
+          ),
+          'type' => 'text_plain',
+          'weight' => '4',
         ),
         'ical' => array(
           'label' => 'above',
@@ -374,11 +383,10 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'link',
+          'label' => 'hidden',
           'settings' => array(),
-          'type' => 'link_default',
-          'weight' => 19,
+          'type' => 'hidden',
+          'weight' => '7',
         ),
         'ical' => array(
           'label' => 'above',
@@ -457,11 +465,13 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
-          'settings' => array(),
+          'settings' => array(
+            'conditions' => array(),
+          ),
           'type' => 'list_default',
-          'weight' => 21,
+          'weight' => '5',
         ),
         'ical' => array(
           'label' => 'above',
@@ -513,16 +523,10 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 24,
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '4',
         ),
         'ical' => array(
           'label' => 'above',
@@ -578,16 +582,10 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => ' ',
-          ),
-          'type' => 'number_integer',
-          'weight' => 18,
+          'label' => 'hidden',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '6',
         ),
         'ical' => array(
           'label' => 'above',
@@ -659,11 +657,13 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'inline',
           'module' => 'list',
-          'settings' => array(),
+          'settings' => array(
+            'conditions' => array(),
+          ),
           'type' => 'list_default',
-          'weight' => 17,
+          'weight' => '0',
         ),
         'ical' => array(
           'label' => 'above',
@@ -728,11 +728,13 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 20,
+          'settings' => array(
+            'conditions' => array(),
+          ),
+          'type' => 'text_plain',
+          'weight' => '7',
         ),
         'ical' => array(
           'label' => 'above',
@@ -801,11 +803,13 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
-          'settings' => array(),
+          'settings' => array(
+            'conditions' => array(),
+          ),
           'type' => 'list_default',
-          'weight' => 23,
+          'weight' => '2',
         ),
         'ical' => array(
           'label' => 'above',
@@ -872,10 +876,11 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
-            'format_type' => 'long',
+            'conditions' => array(),
+            'format_type' => 'year',
             'fromto' => 'both',
             'multiple_from' => '',
             'multiple_number' => '',
@@ -883,7 +888,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => 22,
+          'weight' => '6',
         ),
         'ical' => array(
           'label' => 'above',
