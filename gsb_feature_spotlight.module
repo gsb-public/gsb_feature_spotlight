@@ -139,7 +139,7 @@ function gsb_feature_spotlight_autocomplete($person_type, $field_type, $search_t
         ->fieldCondition($field, 'value', $search_term . '%', 'like');
 
       if (!empty($person_type)) {
-        $query->entityCondition('bundle', 'value', $person_type, '=');
+        $query->entityCondition('bundle', $person_type, '=');
       }
 
       $query->range(0, 5);
