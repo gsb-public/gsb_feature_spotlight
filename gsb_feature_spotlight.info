@@ -44,4 +44,5 @@ features[field][] = fieldable_panels_pane-spotlight-field_title_position_single
 features[field][] = fieldable_panels_pane-spotlight-field_use_profile_img
 features[field][] = fieldable_panels_pane-spotlight-field_year
 features[field_group][] = group_content_wrapper|fieldable_panels_pane|spotlight|default
+features[field_group][] = group_name_wrapper|fieldable_panels_pane|spotlight|default
 features[variable][] = date_format_year

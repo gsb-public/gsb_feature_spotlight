@@ -36,6 +36,9 @@ function gsb_feature_spotlight_defaultconfig_strongarm() {
       'ical' => array(
         'custom_settings' => FALSE,
       ),
+      'megamenu' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

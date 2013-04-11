@@ -50,7 +50,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'conditions' => array(),
           ),
           'type' => 'text_default',
-          'weight' => '8',
+          'weight' => '9',
         ),
         'ical' => array(
           'label' => 'above',
@@ -130,8 +130,9 @@ function gsb_feature_spotlight_field_default_fields() {
           'settings' => array(
             'conditions' => array(),
             'file_view_mode' => 'full',
+            'preview_view_mode' => 'preview',
           ),
-          'type' => 'gsb_field_formatter_default_format',
+          'type' => 'gsb_field_formatter_responsive_video',
           'weight' => '1',
         ),
         'ical' => array(
@@ -452,7 +453,10 @@ function gsb_feature_spotlight_field_default_fields() {
       'locked' => '0',
       'module' => 'list',
       'settings' => array(
-        'allowed_values' => array(),
+        'allowed_values' => array(
+          'one' => 'Petrozavodsk',
+          'two' => 'Petrozavodskyia sazha',
+        ),
         'allowed_values_function' => '',
       ),
       'translatable' => '0',
@@ -471,7 +475,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'conditions' => array(),
           ),
           'type' => 'list_default',
-          'weight' => '5',
+          'weight' => '6',
         ),
         'ical' => array(
           'label' => 'above',
@@ -480,6 +484,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_program_single',
       'label' => 'Program',
@@ -734,7 +739,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'conditions' => array(),
           ),
           'type' => 'text_plain',
-          'weight' => '7',
+          'weight' => '8',
         ),
         'ical' => array(
           'label' => 'above',
@@ -888,7 +893,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => '6',
+          'weight' => '7',
         ),
         'ical' => array(
           'label' => 'above',
