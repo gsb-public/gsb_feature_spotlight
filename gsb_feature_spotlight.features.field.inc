@@ -812,7 +812,7 @@ function gsb_feature_spotlight_field_default_fields() {
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'list',
           'settings' => array(
             'conditions' => array(),
