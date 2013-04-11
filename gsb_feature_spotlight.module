@@ -74,7 +74,7 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
             array('value' => 'Faculty'),
             array('value' => 'Staff'),
           ),
-          ':input[name="field_spotlight_use_prof_img[und]"]' => array(
+          ':input[name="field_use_prof_img[und]"]' => array(
             'checked' => TRUE,
           ),
         ),
@@ -104,11 +104,11 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
     );
 
     // Position relies on the type being a Student.
-    $form['field_title_position']['#states']['invisible'][':input[name="field_spotlight_person_type[und]"]']['value'] = 'Student';
+    $form['field_title_position_single']['#states']['invisible'][':input[name="field_spotlight_person_type[und]"]']['value'] = 'Student';
 
     // Program relies on the type being a Faculty member.
-    $form['field_program']['#states']['invisible'][':input[name="field_spotlight_person_type[und]"]']['value'] = 'Faculty';
-    $form['field_graduation_year']['#states']['invisible'][':input[name="field_spotlight_person_type[und]"]']['value'] = 'Faculty';
+    $form['field_program_single']['#states']['invisible'][':input[name="field_spotlight_person_type[und]"]']['value'] = 'Faculty';
+    $form['field_year']['#states']['invisible'][':input[name="field_spotlight_person_type[und]"]']['value'] = 'Faculty';
   }
 
   if ($form_id == 'field_ui_field_edit_form') {
