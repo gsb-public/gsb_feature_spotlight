@@ -803,12 +803,16 @@ function gsb_feature_spotlight_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'spotlight',
-      'default_value' => NULL,
+      'default_value' => array(
+        0 => array(
+          'value' => 0,
+        ),
+      ),
       'deleted' => '0',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'hidden',
+          'label' => 'above',
           'module' => 'list',
           'settings' => array(
             'conditions' => array(),
@@ -823,6 +827,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_use_profile_img',
       'label' => 'Use Profile Image',
@@ -834,7 +839,7 @@ function gsb_feature_spotlight_field_default_fields() {
         'active' => 1,
         'module' => 'options',
         'settings' => array(
-          'display_label' => 0,
+          'display_label' => 1,
           'maxlength_js_label' => '',
         ),
         'type' => 'options_onoff',

@@ -72,7 +72,6 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
         'visible' => array(
           ':input[name="field_spotlight_person_type[und]"]' => array(
             array('value' => 'Faculty'),
-            array('value' => 'Staff'),
           ),
           ':input[name="field_use_prof_img[und]"]' => array(
             'checked' => TRUE,
@@ -89,14 +88,12 @@ function gsb_feature_spotlight_form_alter(&$form, &$form_state, $form_id) {
     // Only show use person image checkbox when person is selected.
     $form['field_use_profile_img']['#states']['visible'][':input[name="field_spotlight_person_type[und]"]'] = array(
       array('value' => 'Faculty'),
-      array('value' => 'Staff'),
     );
 
     // Hide the upload field if they want to use the person field.
     $form['field_file_single_public']['#states']['invisible'] = array(
       ':input[name="field_spotlight_person_type[und]"]' => array(
         array('value' => 'Faculty'),
-        array('value' => 'Staff'),
       ),
       ':input[name="field_use_profile_img[und]"]' => array(
         'checked' => TRUE,
