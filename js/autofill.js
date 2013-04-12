@@ -26,7 +26,7 @@
 
     // Add class to the body element to hide the autocomplete.
     // @TODO Add the allowed types via javascript settings so we can have any number of types.
-    if (personType == 'Faculty' || personType == 'Staff') {
+    if (personType == 'Faculty') {
       $(':input[name="field_first_name[und][0][value]"]').siblings('input').val(Drupal.settings.basePath + 'gsb_feature_spotlight_autocomplete/' + personType + '/first');
       $(':input[name="field_last_name[und][0][value]"]').siblings('input').val(Drupal.settings.basePath + 'gsb_feature_spotlight_autocomplete/' + personType + '/last');
       $(':input[name="field_first_name[und][0][value]"], :input[name="field_last_name[und][0][value]"]').addClass('form-autocomplete');
