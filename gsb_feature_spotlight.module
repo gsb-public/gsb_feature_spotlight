@@ -153,15 +153,27 @@ function gsb_feature_spotlight_autocomplete($person_type, $field_type, $search_t
       foreach($items as $nid => $entity) {
         $data = array(
           'nid' => $nid,
+          'salutation' => (empty($entity->field_salutation['und'][0]['safe_value'])) ? '' : $entity->field_salutation['und'][0]['safe_value'],
           'first_name' => (empty($entity->field_first_name['und'][0]['safe_value'])) ? '' : $entity->field_first_name['und'][0]['safe_value'],
+          'middle_name' => (empty($entity->field_middle_name['und'][0]['safe_value'])) ? '' : $entity->field_middle_name['und'][0]['safe_value'],
           'last_name' => (empty($entity->field_last_name['und'][0]['safe_value'])) ? '' : $entity->field_last_name['und'][0]['safe_value'],
           'title' => '',
           'url' => (empty($entity->path['alias'])) ? $entity->path['source'] : $entity->path['alias'],
           'fid' => (empty($entity->field_image_single_public['und'][0]['fid'])) ? '' : $entity->field_image_single_public['und'][0]['fid'],
         );
 
-        dpm($entity);
-        //'title' => (empty($entity->field_rank['und'][0]['safe_value'])) ? '' : $entity->field_rank['und'][0]['safe_value'],
+        if (!empty($entity->field_rank['und'][0]['value'])) {
+          $data['title'] = $entity->field_rank['und'][0]['value'];
+
+          if (!empty($entity->field_academic_area_single['und'][0]['tid'])) {
+            $data['title'] .= ' in ';
+          }
+        }
+
+        if (!empty($entity->field_academic_area_single['und'][0]['tid'])) {
+          $term_data = taxonomy_term_load($entity->field_academic_area_single['und'][0]['tid']);;
+          $data['title'] .= $term_data->name;
+        }
 
         $data['url'] = trim(base_path() . $data['url'], '/');
 
@@ -174,7 +186,7 @@ function gsb_feature_spotlight_autocomplete($person_type, $field_type, $search_t
         }
 
         if (!empty($key)) {
-          $matches[$key] = '<div class="item-wrapper" data-info="' . implode('|', $data) . '"><div class="person-autofill-name">' . $data['first_name'] . ' ' . $data['last_name'] . '</div><div class="person-autofill-title">' . $data['title'] . '</div></div>';
+          $matches[$key] = '<div class="item-wrapper" data-info="' . implode('|', $data) . '"><div class="person-autofill-name">' . $data['salutation'] . ' ' . $data['first_name'] . ' ' . $data['middle_name'] . ' ' . $data['last_name'] . '</div><div class="person-autofill-title">' . $data['title'] . '</div></div>';
         }
       }
     }

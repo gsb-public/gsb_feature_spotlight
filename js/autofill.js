@@ -38,13 +38,17 @@
         if (data) {
           data = data.split('|');
           nid = data[0];
-          firstName = data[1];
-          lastName = data[2];
-          title = data[3];
-          link = data[4];
-          fid = data[5];
+          salutation = data[1]
+          firstName = data[2];
+          middleName = data[3];
+          lastName = data[4];
+          title = data[5];
+          link = data[6];
+          fid = data[7];
           $(':input[name="field_spotlight_person_nid[und][0][value]"]').val(nid);
+          $(':input[name="field_salutation[und][0][value]"]').val(salutation);
           $(':input[name="field_first_name[und][0][value]"]').val(firstName);
+          $(':input[name="field_middle_name[und][0][value]"]').val(middleName);
           $(':input[name="field_last_name[und][0][value]"]').val(lastName);
           $(':input[name="field_title_position_single[und][0][value]"]').val(title);
           $(':input[name="field_spotlight_person_fid[und][0][value]"]').val(fid);
