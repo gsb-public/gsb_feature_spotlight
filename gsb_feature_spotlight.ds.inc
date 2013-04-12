@@ -86,6 +86,20 @@ function gsb_feature_spotlight_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_salutation' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+    'field_middle_name' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
   );
   $export['fieldable_panels_pane|spotlight|default'] = $ds_fieldsetting;
 
@@ -110,29 +124,35 @@ function gsb_feature_spotlight_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_spotlight_person_type',
         1 => 'field_file_single_public',
-        2 => 'field_use_profile_img',
-        3 => 'group_content_wrapper',
-        4 => 'field_first_name',
-        5 => 'field_last_name',
-        6 => 'group_name_wrapper',
-        7 => 'field_program_single',
-        8 => 'field_year',
-        9 => 'field_title_position_single',
-        10 => 'field_body',
+        2 => 'field_spotlight_person_fid',
+        3 => 'field_use_profile_img',
+        4 => 'group_content_wrapper',
+        5 => 'group_name_wrapper',
+        6 => 'field_program_single',
+        7 => 'field_year',
+        8 => 'field_title_position_single',
+        9 => 'field_body',
+        10 => 'field_salutation',
+        11 => 'field_first_name',
+        12 => 'field_middle_name',
+        13 => 'field_last_name',
       ),
     ),
     'fields' => array(
       'field_spotlight_person_type' => 'ds_content',
       'field_file_single_public' => 'ds_content',
+      'field_spotlight_person_fid' => 'ds_content',
       'field_use_profile_img' => 'ds_content',
       'group_content_wrapper' => 'ds_content',
-      'field_first_name' => 'ds_content',
-      'field_last_name' => 'ds_content',
       'group_name_wrapper' => 'ds_content',
       'field_program_single' => 'ds_content',
       'field_year' => 'ds_content',
       'field_title_position_single' => 'ds_content',
       'field_body' => 'ds_content',
+      'field_salutation' => 'ds_content',
+      'field_first_name' => 'ds_content',
+      'field_middle_name' => 'ds_content',
+      'field_last_name' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(

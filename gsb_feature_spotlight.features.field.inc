@@ -50,7 +50,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'conditions' => array(),
           ),
           'type' => 'text_default',
-          'weight' => '9',
+          'weight' => '8',
         ),
         'ical' => array(
           'label' => 'above',
@@ -82,7 +82,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '15',
+        'weight' => '14',
       ),
       'workbench_access_field' => 0,
     ),
@@ -128,7 +128,14 @@ function gsb_feature_spotlight_field_default_fields() {
           'label' => 'hidden',
           'module' => 'gsb_field_formatter',
           'settings' => array(
-            'conditions' => array(),
+            'conditions' => array(
+              0 => array(
+                'condition' => 'hide_not_empty',
+                'configuration' => array(
+                  'target' => 'field_use_profile_img',
+                ),
+              ),
+            ),
             'file_view_mode' => 'full',
             'preview_view_mode' => 'preview',
           ),
@@ -142,10 +149,11 @@ function gsb_feature_spotlight_field_default_fields() {
           'weight' => 0,
         ),
       ),
+      'ds_extras_field_template' => '',
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_file_single_public',
       'label' => 'Image or Video',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'description_field' => 0,
         'file_directory' => '',
@@ -185,7 +193,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '12',
+        'weight' => '13',
       ),
       'workbench_access_field' => 0,
     ),
@@ -232,8 +240,8 @@ function gsb_feature_spotlight_field_default_fields() {
           'settings' => array(
             'conditions' => array(),
           ),
-          'type' => 'text_plain',
-          'weight' => '3',
+          'type' => 'text_default',
+          'weight' => '10',
         ),
         'ical' => array(
           'label' => 'above',
@@ -263,7 +271,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '3',
+        'weight' => '4',
       ),
       'workbench_access_field' => 0,
     ),
@@ -310,8 +318,8 @@ function gsb_feature_spotlight_field_default_fields() {
           'settings' => array(
             'conditions' => array(),
           ),
-          'type' => 'text_plain',
-          'weight' => '4',
+          'type' => 'text_default',
+          'weight' => '12',
         ),
         'ical' => array(
           'label' => 'above',
@@ -341,7 +349,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '4',
+        'weight' => '6',
       ),
       'workbench_access_field' => 0,
     ),
@@ -430,6 +438,79 @@ function gsb_feature_spotlight_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'link_field',
+        'weight' => '7',
+      ),
+      'workbench_access_field' => 0,
+    ),
+  );
+
+  // Exported field: 'fieldable_panels_pane-spotlight-field_middle_name'.
+  $fields['fieldable_panels_pane-spotlight-field_middle_name'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_middle_name',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'spotlight',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'conditions' => array(),
+          ),
+          'type' => 'text_default',
+          'weight' => '11',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'fieldable_panels_pane',
+      'field_name' => 'field_middle_name',
+      'label' => 'Middle Name',
+      'required' => 0,
+      'settings' => array(
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
         'weight' => '5',
       ),
       'workbench_access_field' => 0,
@@ -475,7 +556,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'conditions' => array(),
           ),
           'type' => 'list_default',
-          'weight' => '6',
+          'weight' => '5',
         ),
         'ical' => array(
           'label' => 'above',
@@ -499,7 +580,80 @@ function gsb_feature_spotlight_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'options_select',
-        'weight' => '7',
+        'weight' => '9',
+      ),
+      'workbench_access_field' => 0,
+    ),
+  );
+
+  // Exported field: 'fieldable_panels_pane-spotlight-field_salutation'.
+  $fields['fieldable_panels_pane-spotlight-field_salutation'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_salutation',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'spotlight',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'module' => 'text',
+          'settings' => array(
+            'conditions' => array(),
+          ),
+          'type' => 'text_default',
+          'weight' => '9',
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'fieldable_panels_pane',
+      'field_name' => 'field_salutation',
+      'label' => 'Salutation',
+      'required' => 0,
+      'settings' => array(
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'maxlength_js' => 0,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '3',
       ),
       'workbench_access_field' => 0,
     ),
@@ -529,9 +683,19 @@ function gsb_feature_spotlight_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => '4',
+          'module' => 'gsb_field_formatter',
+          'settings' => array(
+            'conditions' => array(
+              0 => array(
+                'condition' => 'hide_if_empty',
+                'configuration' => array(
+                  'target' => 'field_use_profile_img',
+                ),
+              ),
+            ),
+          ),
+          'type' => 'gsb_field_formatter_spotlight_fid_to_image',
+          'weight' => '2',
         ),
         'ical' => array(
           'label' => 'above',
@@ -558,7 +722,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'number',
-        'weight' => '10',
+        'weight' => '12',
       ),
       'workbench_access_field' => 0,
     ),
@@ -739,7 +903,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'conditions' => array(),
           ),
           'type' => 'text_plain',
-          'weight' => '8',
+          'weight' => '7',
         ),
         'ical' => array(
           'label' => 'above',
@@ -769,7 +933,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '6',
+        'weight' => '8',
       ),
       'workbench_access_field' => 0,
     ),
@@ -818,7 +982,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'conditions' => array(),
           ),
           'type' => 'list_default',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'ical' => array(
           'label' => 'above',
@@ -843,7 +1007,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'maxlength_js_label' => '',
         ),
         'type' => 'options_onoff',
-        'weight' => '9',
+        'weight' => '11',
       ),
       'workbench_access_field' => 0,
     ),
@@ -898,7 +1062,7 @@ function gsb_feature_spotlight_field_default_fields() {
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
-          'weight' => '7',
+          'weight' => '6',
         ),
         'ical' => array(
           'label' => 'above',
@@ -933,7 +1097,7 @@ function gsb_feature_spotlight_field_default_fields() {
           'year_range' => '-3:+3',
         ),
         'type' => 'date_text',
-        'weight' => '8',
+        'weight' => '10',
       ),
       'workbench_access_field' => 0,
     ),
@@ -947,10 +1111,12 @@ function gsb_feature_spotlight_field_default_fields() {
   t('Image or Video');
   t('Last Name');
   t('Link Name To');
+  t('Middle Name');
   t('Person Type');
   t('Profile Fid');
   t('Profile Nid');
   t('Program');
+  t('Salutation');
   t('Title/Position');
   t('Use Profile Image');
 

@@ -26,11 +26,12 @@ function gsb_feature_spotlight_field_group_info() {
       0 => 'field_body',
       1 => 'field_file_single_public',
       2 => 'field_program_single',
-      3 => 'field_spotlight_person_type',
-      4 => 'field_title_position_single',
-      5 => 'field_use_profile_img',
-      6 => 'field_year',
-      7 => 'group_name_wrapper',
+      3 => 'field_spotlight_person_fid',
+      4 => 'field_spotlight_person_type',
+      5 => 'field_title_position_single',
+      6 => 'field_use_profile_img',
+      7 => 'field_year',
+      8 => 'group_name_wrapper',
     ),
     'format_type' => 'div',
     'format_settings' => array(
@@ -59,10 +60,12 @@ function gsb_feature_spotlight_field_group_info() {
   $field_group->parent_name = 'group_content_wrapper';
   $field_group->data = array(
     'label' => 'Name wrapper',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
+      2 => 'field_salutation',
+      3 => 'field_middle_name',
     ),
     'format_type' => 'div',
     'format_settings' => array(
