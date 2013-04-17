@@ -73,8 +73,9 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(
             0 => array(
-              'condition' => 'hide_not_empty',
+              'condition' => 'hide_if_string',
               'configuration' => array(
+                'string' => 1,
                 'target' => 'field_use_profile_img',
               ),
             ),
@@ -442,8 +443,9 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'settings' => array(
           'conditions' => array(
             0 => array(
-              'condition' => 'hide_if_empty',
+              'condition' => 'hide_if_string',
               'configuration' => array(
+                'string' => 0,
                 'target' => 'field_use_profile_img',
               ),
             ),
