@@ -212,3 +212,34 @@ function gsb_feature_spotlight_create_thumbnail($fid) {
   print $output;
   exit();
 }
+
+/**
+ * Implements hook_field_extra_fields().
+ */
+function gsb_feature_spotlight_field_extra_fields() {
+  $extra = array();
+  $extra['fieldable_panels_pane']['spotlight']['display'] = array(
+    'gsb_feature_spotlight_label' => array(
+      'label' => t('Faculty Spotlight label'),
+      'description' => t('Faculty Spotlight label'),
+      'weight' => 0,
+    ),
+  );
+  return $extra;
+}
+
+/**
+ * Implements hook_fieldable_panels_pane_view().
+ */
+function gsb_feature_spotlight_fieldable_panels_pane_view($entity, $view_mode, $langcode) {
+  $wrapper = entity_metadata_wrapper('fieldable_panels_pane', $entity);
+  $entity->content['gsb_feature_spotlight_label'] = array(
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'feature-spotlight-label',
+      ),
+    ),
+    '#children' => t('@person_type Spotlight', array('@person_type' => $wrapper->field_spotlight_person_type->value())),
+  );
+}
