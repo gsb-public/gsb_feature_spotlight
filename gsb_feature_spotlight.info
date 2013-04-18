@@ -30,7 +30,6 @@ features[ctools][] = strongarm:strongarm:1
 features[ds_field_settings][] = fieldable_panels_pane|spotlight|default
 features[ds_layout_settings][] = fieldable_panels_pane|spotlight|default
 features[features_api][] = api:1
-features[field_group][] = group_content_wrapper|fieldable_panels_pane|spotlight|default
 features[field_group][] = group_name_wrapper|fieldable_panels_pane|spotlight|default
 features[field_instance][] = fieldable_panels_pane-spotlight-field_body
 features[field_instance][] = fieldable_panels_pane-spotlight-field_file_single_public
