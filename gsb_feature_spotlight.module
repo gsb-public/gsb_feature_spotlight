@@ -232,6 +232,10 @@ function gsb_feature_spotlight_field_extra_fields() {
  * Implements hook_fieldable_panels_pane_view().
  */
 function gsb_feature_spotlight_fieldable_panels_pane_view($entity, $view_mode, $langcode) {
+  if ($entity->bundle != 'spotlight') {
+    return;
+  }
+
   $wrapper = entity_metadata_wrapper('fieldable_panels_pane', $entity);
   $entity->content['gsb_feature_spotlight_label'] = array(
     '#type' => 'container',
