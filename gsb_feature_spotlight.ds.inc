@@ -56,30 +56,14 @@ function gsb_feature_spotlight_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_middle_name' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
     'field_program_single' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
-      ),
-    ),
-    'field_spotlight_person_type' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-          'lb' => 'Spotlight',
-          'lb-col' => TRUE,
-        ),
-      ),
-    ),
-    'field_title_position_single' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
-      ),
-    ),
-    'field_year' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_minimal',
@@ -93,11 +77,16 @@ function gsb_feature_spotlight_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_middle_name' => array(
+    'field_title_position_single' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_minimal',
         ),
+      ),
+    ),
+    'field_year' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );
@@ -122,32 +111,30 @@ function gsb_feature_spotlight_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'field_spotlight_person_type',
-        1 => 'field_file_single_public',
-        2 => 'field_spotlight_person_fid',
-        3 => 'field_use_profile_img',
-        4 => 'group_content_wrapper',
-        5 => 'group_name_wrapper',
+        0 => 'gsb_feature_spotlight_label',
+        1 => 'group_name_wrapper',
+        2 => 'field_file_single_public',
+        3 => 'field_spotlight_person_fid',
+        4 => 'field_use_profile_img',
+        5 => 'field_title_position_single',
         6 => 'field_program_single',
         7 => 'field_year',
-        8 => 'field_title_position_single',
-        9 => 'field_body',
-        10 => 'field_salutation',
-        11 => 'field_first_name',
-        12 => 'field_middle_name',
-        13 => 'field_last_name',
+        8 => 'field_body',
+        9 => 'field_salutation',
+        10 => 'field_first_name',
+        11 => 'field_middle_name',
+        12 => 'field_last_name',
       ),
     ),
     'fields' => array(
-      'field_spotlight_person_type' => 'ds_content',
+      'gsb_feature_spotlight_label' => 'ds_content',
+      'group_name_wrapper' => 'ds_content',
       'field_file_single_public' => 'ds_content',
       'field_spotlight_person_fid' => 'ds_content',
       'field_use_profile_img' => 'ds_content',
-      'group_content_wrapper' => 'ds_content',
-      'group_name_wrapper' => 'ds_content',
+      'field_title_position_single' => 'ds_content',
       'field_program_single' => 'ds_content',
       'field_year' => 'ds_content',
-      'field_title_position_single' => 'ds_content',
       'field_body' => 'ds_content',
       'field_salutation' => 'ds_content',
       'field_first_name' => 'ds_content',

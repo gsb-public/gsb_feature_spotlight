@@ -49,8 +49,14 @@ function gsb_feature_spotlight_defaultconfig_strongarm() {
       'display' => array(
         'title' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '10',
             'visible' => FALSE,
+          ),
+        ),
+        'gsb_feature_spotlight_label' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
           ),
         ),
       ),

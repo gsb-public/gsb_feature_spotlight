@@ -84,7 +84,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'preview_view_mode' => 'preview',
         ),
         'type' => 'gsb_field_formatter_responsive_video',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'ical' => array(
         'label' => 'above',
@@ -251,7 +251,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 12,
       ),
       'ical' => array(
         'label' => 'above',
@@ -357,7 +357,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'list_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'ical' => array(
         'label' => 'above',
@@ -452,7 +452,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           ),
         ),
         'type' => 'gsb_field_formatter_spotlight_fid_to_image',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'ical' => array(
         'label' => 'above',
@@ -495,7 +495,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 11,
       ),
       'ical' => array(
         'label' => 'above',
@@ -540,12 +540,9 @@ function gsb_feature_spotlight_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'inline',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
-        'weight' => 0,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'ical' => array(
         'label' => 'above',
@@ -587,7 +584,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_plain',
-        'weight' => 7,
+        'weight' => 5,
       ),
       'ical' => array(
         'label' => 'above',
@@ -640,7 +637,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'list_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'ical' => array(
         'label' => 'above',
@@ -680,7 +677,15 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'conditions' => array(),
+          'conditions' => array(
+            0 => array(
+              'condition' => 'hide_if_string',
+              'configuration' => array(
+                'string' => 'Faculty',
+                'target' => 'field_spotlight_person_type',
+              ),
+            ),
+          ),
           'format_type' => 'year',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -689,7 +694,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'ical' => array(
         'label' => 'above',

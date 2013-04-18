@@ -57,15 +57,15 @@ function gsb_feature_spotlight_field_group_info() {
   $field_group->entity_type = 'fieldable_panels_pane';
   $field_group->bundle = 'spotlight';
   $field_group->mode = 'default';
-  $field_group->parent_name = 'group_content_wrapper';
+  $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Name wrapper',
-    'weight' => '4',
+    'weight' => '1',
     'children' => array(
       0 => 'field_first_name',
       1 => 'field_last_name',
-      2 => 'field_salutation',
-      3 => 'field_middle_name',
+      2 => 'field_middle_name',
+      3 => 'field_salutation',
     ),
     'format_type' => 'div',
     'format_settings' => array(
