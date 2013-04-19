@@ -24,7 +24,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_default',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'ical' => array(
         'label' => 'above',
@@ -357,7 +357,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'list_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'ical' => array(
         'label' => 'above',
@@ -452,7 +452,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           ),
         ),
         'type' => 'gsb_field_formatter_spotlight_fid_to_image',
-        'weight' => 3,
+        'weight' => 1,
       ),
       'ical' => array(
         'label' => 'above',
@@ -584,7 +584,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'conditions' => array(),
         ),
         'type' => 'text_plain',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'ical' => array(
         'label' => 'above',
@@ -632,12 +632,9 @@ function gsb_feature_spotlight_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
-        'settings' => array(
-          'conditions' => array(),
-        ),
-        'type' => 'list_default',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'ical' => array(
         'label' => 'above',
@@ -694,7 +691,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'ical' => array(
         'label' => 'above',
