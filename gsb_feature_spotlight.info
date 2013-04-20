@@ -47,3 +47,10 @@ features[field_instance][] = fieldable_panels_pane-spotlight-field_use_profile_i
 features[field_instance][] = fieldable_panels_pane-spotlight-field_year
 features[variable][] = date_format_year
 features[variable][] = field_bundle_settings_fieldable_panels_pane__spotlight
+
+
+; Information added by drush on 2013-04-19
+version = "master-dev"
+project = "gsb_feature_spotlight"
+datestamp = "1366432596"
+
