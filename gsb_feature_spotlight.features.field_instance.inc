@@ -80,7 +80,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
               ),
             ),
           ),
-          'file_view_mode' => 'default',
+          'file_view_mode' => 'teaser',
           'preview_view_mode' => 'teaser',
         ),
         'type' => 'gsb_field_formatter_responsive_video',

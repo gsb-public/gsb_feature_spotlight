@@ -54,3 +54,10 @@ version = "master-dev"
 project = "gsb_feature_spotlight"
 datestamp = "1366432596"
 
+
+
+; Information added by drush on 2013-04-20
+version = "master-dev"
+project = "gsb_feature_spotlight"
+datestamp = "1366509191"
+
