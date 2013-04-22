@@ -56,13 +56,6 @@ function gsb_feature_spotlight_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_program_single' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
-      ),
-    ),
     'field_salutation' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -87,6 +80,13 @@ function gsb_feature_spotlight_ds_field_settings_info() {
           'ow-def-cl' => TRUE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_program_single' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),

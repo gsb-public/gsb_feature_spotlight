@@ -352,18 +352,12 @@ function gsb_feature_spotlight_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'list',
+        'module' => 'taxonomy',
         'settings' => array(
           'conditions' => array(),
         ),
-        'type' => 'list_default',
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 5,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -378,7 +372,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
       'active' => 1,
       'module' => 'options',
       'settings' => array(
-        'maxlength_js_label' => '',
+        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
       'weight' => 9,
