@@ -28,16 +28,11 @@ function gsb_feature_spotlight_field_group_info() {
       2 => 'field_middle_name',
       3 => 'field_salutation',
     ),
-    'format_type' => 'div',
+    'format_type' => 'gsb_field_formatter_group_link_to_field',
     'format_settings' => array(
       'label' => 'Name wrapper',
       'instance_settings' => array(
-        'classes' => '',
-        'description' => '',
-        'show_label' => '0',
-        'label_element' => 'h3',
-        'effect' => 'none',
-        'speed' => 'none',
+        'field_name' => 'field_link_single',
       ),
       'formatter' => 'open',
     ),
