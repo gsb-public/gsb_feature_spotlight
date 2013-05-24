@@ -65,7 +65,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
   $field_instances['fieldable_panels_pane-spotlight-field_file_single_public'] = array(
     'bundle' => 'spotlight',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Recommended size for uploaded images is 600x440.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -132,6 +132,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'media_default--media_browser_my_files' => 0,
           'media_internet' => 0,
           'upload' => 0,
+          'youtube' => 0,
         ),
         'maxlength_js_label' => '',
         'progress_indicator' => 'throbber',
@@ -738,6 +739,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
   t('Profile Fid');
   t('Profile Nid');
   t('Program');
+  t('Recommended size for uploaded images is 600x440.');
   t('Salutation');
   t('Title/Position');
   t('Use Profile Image');
