@@ -56,7 +56,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 14,
+      'weight' => -1,
     ),
     'workbench_access_field' => 0,
   );
@@ -138,7 +138,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
-      'weight' => 13,
+      'weight' => -2,
     ),
     'workbench_access_field' => 0,
   );
@@ -187,7 +187,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => -11,
     ),
     'workbench_access_field' => 0,
   );
@@ -236,7 +236,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => -9,
     ),
     'workbench_access_field' => 0,
   );
@@ -295,7 +295,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'maxlength_js_label' => '',
       ),
       'type' => 'link_field',
-      'weight' => 7,
+      'weight' => -8,
     ),
     'workbench_access_field' => 0,
   );
@@ -339,7 +339,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => -10,
     ),
     'workbench_access_field' => 0,
   );
@@ -376,7 +376,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'options_select',
-      'weight' => 9,
+      'weight' => -6,
     ),
     'workbench_access_field' => 0,
   );
@@ -420,7 +420,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => -12,
     ),
     'workbench_access_field' => 0,
   );
@@ -474,7 +474,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
       ),
       'type' => 'number',
-      'weight' => 12,
+      'weight' => -3,
     ),
     'workbench_access_field' => 0,
   );
@@ -517,7 +517,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'maxlength_js_label' => '',
       ),
       'type' => 'number',
-      'weight' => 2,
+      'weight' => -13,
     ),
     'workbench_access_field' => 0,
   );
@@ -560,7 +560,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'maxlength_js_label' => '',
       ),
       'type' => 'options_buttons',
-      'weight' => 1,
+      'weight' => -14,
     ),
     'workbench_access_field' => 0,
   );
@@ -609,7 +609,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => -7,
     ),
     'workbench_access_field' => 0,
   );
@@ -654,7 +654,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'maxlength_js_label' => '',
       ),
       'type' => 'options_onoff',
-      'weight' => 11,
+      'weight' => -4,
     ),
     'workbench_access_field' => 0,
   );
@@ -721,7 +721,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_text',
-      'weight' => 10,
+      'weight' => -5,
     ),
     'workbench_access_field' => 0,
   );

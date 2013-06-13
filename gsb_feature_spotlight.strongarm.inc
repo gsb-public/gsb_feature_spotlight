@@ -45,7 +45,7 @@ function gsb_feature_spotlight_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '-15',
         ),
       ),
       'display' => array(
