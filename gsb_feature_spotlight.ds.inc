@@ -35,6 +35,11 @@ function gsb_feature_spotlight_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_file_single_public' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
+      ),
+    ),
     'field_first_name' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -50,6 +55,13 @@ function gsb_feature_spotlight_ds_field_settings_info() {
       ),
     ),
     'field_middle_name' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
+    'field_program_single' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_minimal',
@@ -80,13 +92,6 @@ function gsb_feature_spotlight_ds_field_settings_info() {
           'ow-def-cl' => TRUE,
           'ow-at' => '',
           'ow-def-at' => FALSE,
-        ),
-      ),
-    ),
-    'field_program_single' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
         ),
       ),
     ),

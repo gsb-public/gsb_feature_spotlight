@@ -80,10 +80,9 @@ function gsb_feature_spotlight_field_default_field_instances() {
               ),
             ),
           ),
-          'file_view_mode' => 'teaser',
-          'preview_view_mode' => 'teaser',
+          'file_view_mode' => 'default',
         ),
-        'type' => 'gsb_field_formatter_responsive_video',
+        'type' => 'gsb_field_formatter_image_or_video_popup',
         'weight' => 2,
       ),
       'ical' => array(
