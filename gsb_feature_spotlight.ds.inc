@@ -35,11 +35,6 @@ function gsb_feature_spotlight_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_file_single_public' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
     'field_first_name' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -55,13 +50,6 @@ function gsb_feature_spotlight_ds_field_settings_info() {
       ),
     ),
     'field_middle_name' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_minimal',
-        ),
-      ),
-    ),
-    'field_program_single' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_minimal',
@@ -95,6 +83,13 @@ function gsb_feature_spotlight_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_program_single' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_minimal',
+        ),
+      ),
+    ),
   );
   $export['fieldable_panels_pane|spotlight|default'] = $ds_fieldsetting;
 
@@ -113,13 +108,17 @@ function gsb_feature_spotlight_ds_layout_settings_info() {
   $ds_layout->entity_type = 'fieldable_panels_pane';
   $ds_layout->bundle = 'spotlight';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_2col_stacked';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'header' => array(
         0 => 'gsb_feature_spotlight_label',
+      ),
+      'left' => array(
         1 => 'field_spotlight_person_fid',
         2 => 'field_file_single_public',
+      ),
+      'right' => array(
         3 => 'group_name_wrapper',
         4 => 'field_title_position_single',
         5 => 'field_program_single',
@@ -132,26 +131,31 @@ function gsb_feature_spotlight_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'gsb_feature_spotlight_label' => 'ds_content',
-      'field_spotlight_person_fid' => 'ds_content',
-      'field_file_single_public' => 'ds_content',
-      'group_name_wrapper' => 'ds_content',
-      'field_title_position_single' => 'ds_content',
-      'field_program_single' => 'ds_content',
-      'field_year' => 'ds_content',
-      'field_body' => 'ds_content',
-      'field_salutation' => 'ds_content',
-      'field_first_name' => 'ds_content',
-      'field_middle_name' => 'ds_content',
-      'field_last_name' => 'ds_content',
+      'gsb_feature_spotlight_label' => 'header',
+      'field_spotlight_person_fid' => 'left',
+      'field_file_single_public' => 'left',
+      'group_name_wrapper' => 'right',
+      'field_title_position_single' => 'right',
+      'field_program_single' => 'right',
+      'field_year' => 'right',
+      'field_body' => 'right',
+      'field_salutation' => 'right',
+      'field_first_name' => 'right',
+      'field_middle_name' => 'right',
+      'field_last_name' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'header' => 'div',
+      'left' => 'div',
+      'right' => 'div',
+      'footer' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
   );
   $export['fieldable_panels_pane|spotlight|default'] = $ds_layout;
 

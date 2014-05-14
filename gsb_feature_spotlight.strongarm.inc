@@ -51,7 +51,7 @@ function gsb_feature_spotlight_strongarm() {
       'display' => array(
         'title' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '11',
             'visible' => FALSE,
           ),
         ),
