@@ -237,6 +237,10 @@ function gsb_feature_spotlight_fieldable_panels_pane_view($entity, $view_mode, $
   }
 
   $wrapper = entity_metadata_wrapper('fieldable_panels_pane', $entity);
+  $person_type = $wrapper->field_spotlight_person_type->value();
+  if ($person_type == 'Other') {
+    $person_type = '';
+  }
   $entity->content['gsb_feature_spotlight_label'] = array(
     '#type' => 'container',
     '#attributes' => array(
@@ -244,6 +248,6 @@ function gsb_feature_spotlight_fieldable_panels_pane_view($entity, $view_mode, $
         'feature-spotlight-label',
       ),
     ),
-    '#children' => t('@person_type Spotlight', array('@person_type' => $wrapper->field_spotlight_person_type->value())),
+    '#children' => t('@person_type Spotlight', array('@person_type' => $person_type)),
   );
 }
