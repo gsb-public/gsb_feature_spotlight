@@ -238,7 +238,7 @@ function gsb_feature_spotlight_fieldable_panels_pane_view($entity, $view_mode, $
 
   $wrapper = entity_metadata_wrapper('fieldable_panels_pane', $entity);
   $person_type = $wrapper->field_spotlight_person_type->value();
-  $header = ($person_type == 'Other') ? t('Spotlight') : $person_type . t(' Spotlight');
+  $header = ($person_type == 'Other') ? t('Spotlight') : t('@person_type Spotlight', array('@person_type' => $person_type));
   $entity->content['gsb_feature_spotlight_label'] = array(
     '#type' => 'container',
     '#attributes' => array(
