@@ -66,8 +66,10 @@ function gsb_feature_spotlight_field_default_field_instances() {
   // Exported field_instance: 'fieldable_panels_pane-spotlight-field_file_single_public'
   $field_instances['fieldable_panels_pane-spotlight-field_file_single_public'] = array(
     'bundle' => 'spotlight',
+    'custom_add_another' => '',
+    'custom_remove' => '',
     'deleted' => 0,
-    'description' => 'Recommended size for uploaded images is 600x440.',
+    'description' => '540 x 316 px',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -105,6 +107,26 @@ function gsb_feature_spotlight_field_default_field_instances() {
       'description_field' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
+      'filefield_paths' => array(
+        'active_updating' => 0,
+        'file_name' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '[file:ffp-name-only-original].[file:ffp-extension-original]',
+        ),
+        'file_path' => array(
+          'options' => array(
+            'pathauto' => 0,
+            'transliterate' => 0,
+          ),
+          'value' => '',
+        ),
+        'replace_existing_files' => 0,
+        'retroactive_update' => 0,
+      ),
+      'filefield_paths_enabled' => 1,
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -113,8 +135,12 @@ function gsb_feature_spotlight_field_default_field_instances() {
       'module' => 'media',
       'settings' => array(
         'allowed_schemes' => array(
+          'callout' => 0,
           'private' => 'private',
           'public' => 'public',
+          'resource' => 0,
+          'ryoutube' => 0,
+          'twitter' => 0,
           'vimeo' => 'vimeo',
           'youtube' => 'youtube',
         ),
@@ -122,6 +148,10 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'audio' => 0,
           'document' => 0,
           'image' => 'image',
+          'resource_image' => 0,
+          'resource_pull_quote' => 0,
+          'resource_twitter' => 0,
+          'resource_youtube' => 0,
           'video' => 'video',
         ),
         'browser_plugins' => array(
@@ -137,7 +167,6 @@ function gsb_feature_spotlight_field_default_field_instances() {
           'upload' => 0,
           'youtube' => 0,
         ),
-        'maxlength_js_label' => '',
         'progress_indicator' => 'throbber',
       ),
       'type' => 'media_generic',
@@ -273,6 +302,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
     'label' => 'Link Name To',
     'required' => 0,
     'settings' => array(
+      'absolute_url' => 1,
       'attributes' => array(
         'class' => '',
         'configurable_title' => 0,
@@ -756,6 +786,7 @@ function gsb_feature_spotlight_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('540 x 316 px');
   t('Body');
   t('First Name');
   t('Graduation Year');
@@ -767,7 +798,6 @@ function gsb_feature_spotlight_field_default_field_instances() {
   t('Profile Fid');
   t('Profile Nid');
   t('Program');
-  t('Recommended size for uploaded images is 600x440.');
   t('Salutation');
   t('Title/Position');
   t('Use Profile Image');
