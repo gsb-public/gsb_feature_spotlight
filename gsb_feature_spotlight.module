@@ -174,7 +174,7 @@ function gsb_feature_spotlight_autocomplete($person_type, $field_type, $search_t
           $data['title'] .= $term_data->name;
         }
 
-        $data['url'] = trim(base_path() . $data['url'], '/');
+        $data['url'] = trim(base_path() . $data['url']);
 
         $key = '';
         if ($field == 'field_first_name') {
