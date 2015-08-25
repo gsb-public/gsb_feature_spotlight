@@ -35,38 +35,94 @@ function gsb_feature_spotlight_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_file_single_public' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
     'field_first_name' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
     'field_last_name' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
     'field_middle_name' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
     'field_salutation' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'span',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_spotlight_person_fid' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
     'field_title_position_single' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -86,7 +142,13 @@ function gsb_feature_spotlight_ds_field_settings_info() {
     'field_program_single' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_minimal',
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'div',
+          'ow-cl' => '',
+          'ow-def-cl' => TRUE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -108,17 +170,15 @@ function gsb_feature_spotlight_ds_layout_settings_info() {
   $ds_layout->entity_type = 'fieldable_panels_pane';
   $ds_layout->bundle = 'spotlight';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_2col_stacked';
+  $ds_layout->layout = 'ds_2col';
   $ds_layout->settings = array(
     'regions' => array(
-      'header' => array(
-        0 => 'gsb_feature_spotlight_label',
-      ),
       'left' => array(
-        1 => 'field_spotlight_person_fid',
-        2 => 'field_file_single_public',
+        0 => 'field_spotlight_person_fid',
+        1 => 'field_file_single_public',
       ),
       'right' => array(
+        2 => 'gsb_feature_spotlight_label',
         3 => 'group_name_wrapper',
         4 => 'field_title_position_single',
         5 => 'field_program_single',
@@ -131,9 +191,9 @@ function gsb_feature_spotlight_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'gsb_feature_spotlight_label' => 'header',
       'field_spotlight_person_fid' => 'left',
       'field_file_single_public' => 'left',
+      'gsb_feature_spotlight_label' => 'right',
       'group_name_wrapper' => 'right',
       'field_title_position_single' => 'right',
       'field_program_single' => 'right',
@@ -146,16 +206,15 @@ function gsb_feature_spotlight_ds_layout_settings_info() {
     ),
     'classes' => array(),
     'wrappers' => array(
-      'header' => 'div',
       'left' => 'div',
       'right' => 'div',
-      'footer' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['fieldable_panels_pane|spotlight|default'] = $ds_layout;
 

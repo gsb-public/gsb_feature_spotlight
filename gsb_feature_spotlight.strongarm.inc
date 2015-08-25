@@ -41,6 +41,15 @@ function gsb_feature_spotlight_strongarm() {
       'people_fpp' => array(
         'custom_settings' => FALSE,
       ),
+      'compact' => array(
+        'custom_settings' => FALSE,
+      ),
+      'expanded' => array(
+        'custom_settings' => FALSE,
+      ),
+      'alumni_featured_content' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -57,7 +66,7 @@ function gsb_feature_spotlight_strongarm() {
         ),
         'gsb_feature_spotlight_label' => array(
           'default' => array(
-            'weight' => '0',
+            'weight' => '2',
             'visible' => TRUE,
           ),
         ),
