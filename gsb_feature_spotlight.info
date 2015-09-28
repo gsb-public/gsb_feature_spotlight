@@ -12,6 +12,7 @@ dependencies[] = field_group
 dependencies[] = fieldable_panels_panes
 dependencies[] = file
 dependencies[] = file_entity
+dependencies[] = filefield_paths
 dependencies[] = gsb_feature_base_fields
 dependencies[] = gsb_field_formatter
 dependencies[] = link

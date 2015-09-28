@@ -32,7 +32,14 @@ function gsb_feature_spotlight_field_group_info() {
     'format_settings' => array(
       'label' => 'Name wrapper',
       'instance_settings' => array(
-        'field_name' => 'field_link_single',
+        'id' => '',
+        'classes' => 'field-group-format group_name_wrapper field-group-gsb_field_formatter_group_link_to_field group-name-wrapper ',
+        'description' => '',
+        'show_label' => '0',
+        'label_element' => 'h3',
+        'effect' => 'none',
+        'speed' => 'fast',
+        'field_name' => '',
       ),
       'formatter' => 'open',
     ),

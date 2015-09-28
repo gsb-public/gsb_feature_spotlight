@@ -50,6 +50,9 @@ function gsb_feature_spotlight_strongarm() {
       'alumni_featured_content' => array(
         'custom_settings' => FALSE,
       ),
+      'preview' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
